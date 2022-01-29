@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.83
+    agentRadius: 1
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.27666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -263,6 +263,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 108885095}
+    - target: {fileID: 2366653541693992027, guid: 4d508605d83b21b458a4024869d5159b,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4986878488644512898, guid: 4d508605d83b21b458a4024869d5159b,
         type: 3}
       propertyPath: m_RootOrder
@@ -836,6 +841,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 108885095}
+    - target: {fileID: 2366653541693992027, guid: 4d508605d83b21b458a4024869d5159b,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4986878488644512898, guid: 4d508605d83b21b458a4024869d5159b,
         type: 3}
       propertyPath: m_RootOrder
