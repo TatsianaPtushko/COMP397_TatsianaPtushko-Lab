@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: b89dd170bad59d340b3e629aeb653a40
+guid: d716ab92c50968d47a6f19da88c9f43e
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 7764041658641970723
+    second: Coin|RotationClip
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Marble
-    second: {fileID: 2100000, guid: 6c9d487f8437b3d4696d66e4e9332591, type: 2}
+      name: Gold Material
+    second: {fileID: 2100000, guid: 4e348a9b33ff6094c80fc4b19efa22aa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
