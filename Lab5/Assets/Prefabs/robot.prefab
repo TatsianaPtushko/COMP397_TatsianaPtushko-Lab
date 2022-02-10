@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 1883599876469003530}
   - component: {fileID: 8566652985295699155}
   - component: {fileID: 1789959739967772129}
+  - component: {fileID: 4228072120412191555}
+  - component: {fileID: 3589895481934335328}
+  - component: {fileID: 1611429659}
   m_Layer: 9
   m_Name: Torso
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +90,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4228072120412191555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966036624825811101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b92b3f316e60a43bb409f39620f4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls: {fileID: 0}
+--- !u!65 &3589895481934335328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966036624825811101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.017807957, y: 0.012157751, z: 0.026370991}
+  m_Center: {x: -0.00009986503, y: 0.0005365923, z: 0.010510467}
+--- !u!136 &1611429659
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966036624825811101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.010430589
+  m_Height: 0.027387792
+  m_Direction: 2
+  m_Center: {x: 0.00005942583, y: 0.00058111106, z: 0.010838524}
 --- !u!1 &5067369892044655683
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +241,7 @@ GameObject:
   - component: {fileID: 4917947313191952989}
   m_Layer: 9
   m_Name: Wheel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -279,12 +322,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4986878488644512898}
-  - component: {fileID: 2439566972803348750}
   - component: {fileID: 2366653541693992027}
   - component: {fileID: 350900877705377873}
   m_Layer: 9
   m_Name: robot
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,19 +349,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &2439566972803348750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5656278401078605368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.3, y: 2.5, z: 1.21}
-  m_Center: {x: 0, y: 1.0746248, z: -0}
 --- !u!195 &2366653541693992027
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -334,7 +363,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

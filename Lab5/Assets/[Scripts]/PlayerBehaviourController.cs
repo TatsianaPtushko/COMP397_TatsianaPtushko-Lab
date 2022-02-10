@@ -18,6 +18,9 @@ public class PlayerBehaviourController : MonoBehaviour
     public LayerMask groundMask;
     public bool isGrounded;
 
+    [Header("Health System")]
+    public UIControls controls;
+    public bool isColliding =false;
 
     // Start is called before the first frame update
     void Start()
@@ -57,4 +60,6 @@ public class PlayerBehaviourController : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
+    
+
 }

@@ -9,6 +9,9 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Aa]ssets/TextMesh Pro/Documentation
+/[Aa]ssets/TextMesh Pro/Examples*
+/[Aa]ssets/TextMesh Pro/Resources
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
