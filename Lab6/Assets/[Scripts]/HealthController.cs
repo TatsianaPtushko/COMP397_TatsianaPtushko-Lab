@@ -6,12 +6,13 @@ public class HealthController : MonoBehaviour
 {
     
     public UIControls controls;
+    public int damagePower = 10;
 
     public void OnTriggerEnter(Collider other)
     { 
         if (other.gameObject.CompareTag("Player"))
         {
-            controls.TakeDamage(10);
+            controls.TakeDamage(damagePower);
         }
     }
 
