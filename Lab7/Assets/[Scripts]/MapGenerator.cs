@@ -11,9 +11,11 @@ public class MapGenerator : MonoBehaviour
 
     [Header("Spawn Point")]
     public GameObject spawnPoint;
-    private GameObject sPoint;
+    public GameObject player;
+    public GameObject sPoint;
+    private GameObject newPlayer;
 
-   [Header("Map Properties")]
+    [Header("Map Properties")]
 
     [Range(3, 30)]
     public int width =3;
@@ -60,6 +62,7 @@ public class MapGenerator : MonoBehaviour
         }
         tiles.Clear();//remove all tiles
         Destroy(sPoint);
+        Destroy(newPlayer);
     }
 
     public void BuildMap()
@@ -114,6 +117,9 @@ public class MapGenerator : MonoBehaviour
 
                     // instantiate a spawn point at position of Start tile
                     sPoint = Instantiate(spawnPoint, spawnPosition, Quaternion.identity);
+                    // instantiate the Player at position of Spawn point
+                    newPlayer = Instantiate(player, spawnPosition, Quaternion.identity);
+
                 }
                 else if (row == randomGoalRowPosition && col == randomGoalColPosition)  //random position of the goal tile
                     { //place the goal tile

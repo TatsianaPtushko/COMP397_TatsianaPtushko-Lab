@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class DeathPlaneController : MonoBehaviour
 {
-    public Transform playerRespawn;
+    //public Transform playerRespawn;
+    public GameObject controller;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -29,7 +19,12 @@ public class DeathPlaneController : MonoBehaviour
     public void RespawnPlayer(GameObject player)
     {
         player.GetComponent<CharacterController>().enabled = false;
-        player.transform.position = playerRespawn.position;
+
+        //access the spawn position of current generated map
+        MapGenerator script = controller.GetComponent<MapGenerator>();
+        
+        //set player position to spawn position from map ganerator script
+        player.transform.position = script.sPoint.transform.position; //playerRespawn.position;
         player.GetComponent<CharacterController>().enabled = true;
     }
 }
