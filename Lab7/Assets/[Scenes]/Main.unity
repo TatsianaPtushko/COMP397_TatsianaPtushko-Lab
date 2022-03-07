@@ -267,6 +267,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 4973075366266060685, guid: 7d431faaf2721dd468de51657fc62600,
     type: 3}
   player: {fileID: 1959168753613895575, guid: 32fa95086b2e6bc479c331bdbc082ddd, type: 3}
+  sPoint: {fileID: 0}
   width: 3
   depth: 3
   parent: {fileID: 557315076}
@@ -318,8 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8b081445480f442b385c336c872263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRespawn: {fileID: 4973075366266060686, guid: 7d431faaf2721dd468de51657fc62600,
-    type: 3}
+  controller: {fileID: 313296641}
 --- !u!65 &342327880
 BoxCollider:
   m_ObjectHideFlags: 0
