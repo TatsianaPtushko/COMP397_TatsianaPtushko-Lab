@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerBehaviourController : MonoBehaviour
 {
     public CharacterController controller;
+    public GameObject gameController;
+  
 
     [Header("Movement")]
     public float maxSpeed = 10.0f;
@@ -30,7 +32,6 @@ public class PlayerBehaviourController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class PlayerBehaviourController : MonoBehaviour
         if(isGrounded && velocity.y < 0.0f)
         {
             velocity.y = -2.0f;
-        
+        }
 
         //keyboard input
         float x = Input.GetAxis("Horizontal") + leftJoystick.Horizontal;
@@ -76,6 +77,5 @@ public class PlayerBehaviourController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
         }
     }
-    
 
 }

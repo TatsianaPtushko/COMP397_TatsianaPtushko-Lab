@@ -37,6 +37,7 @@ public class MapGenerator : MonoBehaviour
      startWidth =width;
      startDepth =depth;
      BuildMap();
+     
 
     }
         
@@ -45,8 +46,9 @@ public class MapGenerator : MonoBehaviour
     {
         if (width!=startWidth || startDepth != depth)
         {   
-            ResetMap();
+            ResetMap();           
             BuildMap();
+           
         }
     }
 
@@ -62,7 +64,8 @@ public class MapGenerator : MonoBehaviour
         }
         tiles.Clear();//remove all tiles
         Destroy(sPoint);
-        Destroy(newPlayer);
+        
+        
     }
 
     public void BuildMap()
@@ -117,8 +120,7 @@ public class MapGenerator : MonoBehaviour
 
                     // instantiate a spawn point at position of Start tile
                     sPoint = Instantiate(spawnPoint, spawnPosition, Quaternion.identity);
-                    // instantiate the Player at position of Spawn point
-                    newPlayer = Instantiate(player, spawnPosition, Quaternion.identity);
+                    player.transform.position = sPoint.transform.position;
 
                 }
                 else if (row == randomGoalRowPosition && col == randomGoalColPosition)  //random position of the goal tile
@@ -132,6 +134,8 @@ public class MapGenerator : MonoBehaviour
                         tiles.Add(Instantiate(tilePrefabs[randomPrefabIndex], tilePosition, randRotation, parent));
                     }
                 }
+            
         }
+        
     }
 }
