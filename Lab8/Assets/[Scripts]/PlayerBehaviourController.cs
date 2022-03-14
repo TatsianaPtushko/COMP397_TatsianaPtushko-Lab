@@ -44,11 +44,10 @@ public class PlayerBehaviourController : MonoBehaviour
             velocity.y = -2.0f;
         }
 
-        //keyboard input
+        //keyboard input                      + //onscreen Joystick
         float x = Input.GetAxis("Horizontal") + leftJoystick.Horizontal;
         float z = Input.GetAxis("Vertical")+leftJoystick.Vertical;
 
-        //onscreen Joystick
         
 
         Vector3 move = transform.right * x + transform.forward * z;
