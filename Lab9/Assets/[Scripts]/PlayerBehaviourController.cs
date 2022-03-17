@@ -27,11 +27,27 @@ public class PlayerBehaviourController : MonoBehaviour
     [Header("Onscreen Joystick")]
     public Joystick leftJoystick;
 
+    public GameObject onScreenControls;
+    public GameObject miniMap;
+
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        switch (Application.platform)
+        {
+            case RuntimePlatform.Android:
+                //turn OnScreen controls on
+                onScreenControls.SetActive(true);
+                break;
+            case RuntimePlatform.WebGLPlayer:
+            case RuntimePlatform.WindowsEditor:
+                //turn OnScreen controls off
+                onScreenControls.SetActive(false);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -58,7 +74,13 @@ public class PlayerBehaviourController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.M)) 
+        {
+            //Toggle minimap
+            miniMap.SetActive(!miniMap.activeInHierarchy);
+        }
+
+            velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
@@ -69,7 +91,7 @@ public class PlayerBehaviourController : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
     }
 
-    public void OnAButtonPressed()
+    public void OnJumpButtonPressed()
     {
         if (isGrounded)
         {
@@ -77,4 +99,8 @@ public class PlayerBehaviourController : MonoBehaviour
         }
     }
 
+    public void OnMapButtonPressed()
+    {//Toggle minimap
+        miniMap.SetActive(!miniMap.activeInHierarchy);
+    }
 }
