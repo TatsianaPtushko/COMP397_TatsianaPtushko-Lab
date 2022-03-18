@@ -10,6 +10,7 @@ using UnityEngine;
 public class GameSaveManager : MonoBehaviour
 {
     public Transform player;
+    public PlayerDataScriptableObject playerDataSO;
 
 
     void Update()
@@ -73,6 +74,11 @@ public class GameSaveManager : MonoBehaviour
         file.Close();
         Debug.Log("Game data saved!");
         
+        playerDataSO.position =player.position;
+        playerDataSO.rotation = player.rotation;
+        playerDataSO.playerhealth = 50;
+        playerDataSO.name = "Player 1";
+
     }
 
     void LoadGame()
