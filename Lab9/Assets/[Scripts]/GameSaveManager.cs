@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameSaveManager : MonoBehaviour
-
 {
-
     public Transform player;
-   
-    void SaveGame()
+
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            SaveGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadGame();
+        }
+    }
+        void SaveGame()
     {
         string playerPosition = JsonUtility.ToJson(player.position);
         string playerRotation = JsonUtility.ToJson(player.rotation.eulerAngles);
@@ -29,17 +40,17 @@ public class GameSaveManager : MonoBehaviour
             player.gameObject.GetComponent<CharacterController>().enabled = true;
             Debug.Log("Game data Loaded!");
         }
-        else Debug.LogError("There is no saved data!");
-
+        else
+        {
+            Debug.LogError("There is no saved data!");
+        }
     }
-
-
 
     void ResetData()
     {
-        
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Data reset complete");
     }
-
 
     public void OnSaveButtonPressed()
     {
