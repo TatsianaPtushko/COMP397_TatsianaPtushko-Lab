@@ -2079,8 +2079,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 589, y: -143}
-  m_SizeDelta: {x: 515.5104, y: 51.900024}
+  m_AnchoredPosition: {x: -419, y: -143}
+  m_SizeDelta: {x: -1500.4897, y: 51.900024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880854793 stripped
 MonoBehaviour:
@@ -2271,6 +2271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OnScreenControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851659521754758942, guid: 38142a3416226964e9b70519fcd75939,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1851659521788225731, guid: 38142a3416226964e9b70519fcd75939,
         type: 3}
