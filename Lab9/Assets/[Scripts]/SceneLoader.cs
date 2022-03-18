@@ -7,6 +7,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadNextScene()
     {
+        Debug.Log("Before next Scene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
        
     }
