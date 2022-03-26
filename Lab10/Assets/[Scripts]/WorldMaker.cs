@@ -8,7 +8,7 @@ public class WorldMaker : MonoBehaviour
     public GameObject playerPrefab;
 
     [Header("World Propeties")]
-    [Range(1,32)]
+    [Range(1,64)]
     public int height=1;
     [Range(1, 64)]
     public int width=1;
@@ -64,6 +64,11 @@ public class WorldMaker : MonoBehaviour
         {
             Generate();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Generate();
+        }
     }
 
     private void Regenerate()
@@ -105,7 +110,7 @@ public class WorldMaker : MonoBehaviour
     private void PositionPlayer()
     {
         playerPrefab.GetComponent<CharacterController>().enabled = false;
-        playerPrefab.transform.position = new Vector3(width, height+10.0f + depth);
+        playerPrefab.transform.position = new Vector3(width*0.5f, height+10.0f + depth*0.5f);
         playerPrefab.GetComponent<CharacterController>().enabled = true;
     }
 }
