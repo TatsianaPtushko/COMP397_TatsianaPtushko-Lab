@@ -60,7 +60,7 @@ public class GameSaveManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Debug.Log("Data reset complete");
     }
-    */
+   */
 
     //using Binary formatter
    void  SaveGame() 
@@ -116,7 +116,7 @@ public class GameSaveManager : MonoBehaviour
         }
     }
         //end of Binary formatter
-
+    
         public void OnSaveButtonPressed()
     {
         SaveGame();
