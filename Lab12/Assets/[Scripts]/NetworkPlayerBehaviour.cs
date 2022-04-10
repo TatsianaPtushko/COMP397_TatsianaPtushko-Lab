@@ -37,7 +37,8 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
     {
         if (!IsLocalPlayer)
         {
-         //  Destroy(GetComponentInChildren<CameraController>().gameObject);
+          GetComponentInChildren<NetworkCameraController>().enabled =false;
+          GetComponentInChildren<Camera>().enabled = false;
         }
         else
         {
@@ -71,6 +72,21 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (IsLocalPlayer)
+        {
+            UpdateRotationYServerRPC(transform.eulerAngles.y);
+        }
+    }
+
+    [ServerRpc]
+
+    void UpdateRotationYServerRPC(float newRotationY) 
+    {
+        transform.rotation = Quaternion.Euler(0f, newRotationY, 0f);
+    }
+
     private void Move()
     {
         
@@ -96,8 +112,8 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
 
 public void RandomSpawnPosition()
     {
-        var x = Random.Range(-2.0f, 2.0f);
-        var z = Random.Range(-2.0f, 2.0f);
+        var x = Random.Range(-4.0f, 4.0f);
+        var z = Random.Range(-4.0f, 4.0f);
         transform.position = new Vector3(x, 1.0f, z);
 
     }
