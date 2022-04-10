@@ -33,13 +33,7 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
         RandomSpawnPositionAndColor();
 
         meshRenderer.material.SetColor("_Color", materialColor.Value);
-       
-/*
-        if (IsServer)
-        {
-            meshRenderer.material.SetColor("_Color", materialColor.Value);
-        }
-*/
+     
     }
 
     // Update is called once per frame
